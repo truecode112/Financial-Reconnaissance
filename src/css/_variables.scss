@@ -1,0 +1,43 @@
+@mixin fullWindow {
+    width: 100vw;
+    height: 100vh;
+}
+@mixin fontFamily() {
+    font-family: 'Open Sans', 'Montserrat', -apple-system, 
+    BlinkMacSystemFont, "Segoe UI", "Roboto", 
+    "Helvetica Neue", sans-serif;
+}
+@mixin animation($time: 0.3s){
+  transition: all $time ease;
+}
+@mixin borderRadius($size:0.5rem) {
+  border-radius: $size;
+}
+
+// https://stackoverflow.com/a/41096631
+@mixin customScrollBar() {
+  scroll-behavior: smooth;
+
+    &::-webkit-scrollbar{
+      @include borderRadius;
+      width: 8px;
+      height: 8px;
+    }
+      
+    &::-webkit-scrollbar-track{
+      @include borderRadius;
+      background: #ffffff;
+    }
+
+    &::-webkit-scrollbar-thumb{
+      background: #bcc1db;
+      @include borderRadius;
+
+      &:hover{
+        background: #9FA6B2;
+      }
+    }
+    scrollbar-width: thin;
+    scrollbar-height: thin;
+    // scrollbar-color: $clr-gray-4 $clr-gray-5;
+}

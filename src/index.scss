@@ -1,0 +1,87 @@
+@import "./css/variables";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  [type='text'], [type='email'],
+  [type='url'], [type='password'],
+  [type='number'], [type='date'],
+  [type='datetime-local'], [type='month'],
+  [type='search'], [type='tel'],
+  [type='time'], [type='week'],
+  [multiple], textarea, select {
+    @apply h-8 block w-full rounded-md focus:ring focus:border-blue-300 focus:ring-blue-200 focus:ring-opacity-50 placeholder-gray-400 text-gray-600 border-gray-300;
+    @apply text-sm px-3 placeholder:text-sm;
+    &.error {
+      @apply border-red-500 focus:border-red-300 focus:ring-red-200;
+    }
+  }
+
+  [type='checkbox'],
+  [type='radio'] {
+    @apply text-red-600 focus:ring-red-500 cursor-pointer;
+  }
+  [type='checkbox'] {
+    @apply rounded;
+  }
+  [type='radio'] {
+    @apply rounded-md;
+  }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  list-style-type: none;
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  @include fontFamily;
+  overflow: hidden;
+}
+
+.scrollbar{ @include customScrollBar }
+.flush-bottom::after{
+  width: 100%;
+  height: 40px;
+  content: " ";
+  display: table;
+}
+
+table tr td{
+  &.sticky{
+    // opacity: 50;
+    &::after{
+      width: 100%;
+      height: 100%;
+      // background-color: red;
+      content: "";
+      border-bottom: 1px solid #eee;
+      display: block;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+    }
+  }
+}
+
+@keyframes swingAnimation {
+  0% {
+    transform: translate(-20%, 0); //corresponds to 20% visible width of bar
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+
+.animateSwing {
+  .bar{
+    width: 20%;
+  }
+  animation: swingAnimation 1s infinite ease-in-out;
+}
