@@ -11,6 +11,11 @@ export function slugify(str: string) {
       .join("-") //join items together into a string with hyphen
 }
 
+export function passwordify(str: string) {
+  if (str) return str
+    .replace(/./g, '*')
+}
+
 export const cx = (...args: (string | boolean | undefined)[]) => args.join(" ")
 
 export function queryStringFromObject(obj: _Object) {

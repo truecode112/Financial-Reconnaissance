@@ -28,7 +28,8 @@ interface _TableHeader {
    suffix?: string,
    capitalize?: boolean,
    placeholder?: string,
-   children?: React.ReactNode
+   children?: React.ReactNode,
+   password? : boolean
 }
 
 interface _SearchFormInput {
