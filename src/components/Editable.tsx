@@ -167,7 +167,7 @@ function TableRow(props: Omit<EdiTableProps, 'data'> & { data: _Object }) {
               key={label + index}
               style={{ minWidth: 120 }}
               aria-label={label}
-              onClick={() => !isEditing && setIsEditing(true)}
+              onClick={() => !isEditing && !props.hasConnect && setIsEditing(true)}
               className={cx(
                 'p-4 cursor-pointer text-sm',
                 elem.sticky && "sticky left-0 z-10",
