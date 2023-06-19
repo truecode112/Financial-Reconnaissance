@@ -130,7 +130,8 @@ function TableRow(props: Omit<EdiTableProps, 'data'> & { data: _Object }) {
   function handleConnect() {
     let postData = { ...props.data };
     console.log('postData >>> ', postData);
-    alert(postData.ipAddress);
+    //alert(postData.ipAddress);
+    window.open(`/${postData.ipAddress}`, '_blank');
   }
 
   //When editing is enabled
