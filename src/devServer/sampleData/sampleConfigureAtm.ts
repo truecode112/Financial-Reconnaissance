@@ -6,7 +6,7 @@ export default [
   {
     id: 1,
     location: "AMAOKWE ITEM CASH CENTEABA NG",
-    ipAddress: "16.16.182.13",
+    ipAddress: "13.48.5.211",
     terminalId: "17013280",
     rdpUsername: "Administrator",
     rdpPassword: "Biz8dFBeFlJPt*AC63kGP4Pu(CE(3aSt",
